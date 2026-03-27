@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Emlak Yazdır</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #111;
+        }
+
+        .print-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .print-actions {
+            margin-bottom: 20px;
+        }
+
+        @media print {
+            .print-actions {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .card {
+                border: 1px solid #ddd !important;
+                box-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="print-container">
+    <div class="print-actions d-flex gap-2">
+        <button onclick="window.print()" class="btn btn-dark">Yazdır</button>
+        <a th:href="@{/properties/view}" class="btn btn-outline-secondary">Geri Dön</a>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+            <h1 class="mb-4" th:text="${property.title}">Emlak Başlığı</h1>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h6 class="text-muted">Sahibi</h6>
+                    <p class="mb-0" th:text="${property.ownerFullName}">Esra Yılmaz</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="text-muted">İlan Türü</h6>
+                    <p class="mb-0" th:text="${property.listingType.label}">Kiralık</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="text-muted">Emlak Türü</h6>
+                    <p class="mb-0" th:text="${property.propertyType.label}">Daire</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="text-muted">Durum</h6>
+                    <p class="mb-0" th:text="${property.status.label}">Aktif</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="text-muted">Şehir</h6>
+                    <p class="mb-0" th:text="${property.city}">Ankara</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="text-muted">İlçe</h6>
+                    <p class="mb-0" th:text="${property.district}">Çankaya</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="text-muted">Adres</h6>
+                    <p class="mb-0" th:text="${property.address}">Kızılay Mahallesi</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="text-muted">Fiyat</h6>
+                    <p class="mb-0" th:text="${@priceFormatter.formatTL(property.price)}"></p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="text-muted">Metrekare</h6>
+                    <p class="mb-0" th:text="${property.squareMeters}">95</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="text-muted">Oda Sayısı</h6>
+                    <p class="mb-0" th:text="${property.roomCount}">2</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="text-muted">Isınma Türü</h6>
+                    <p class="mb-0" th:text="${property.heatingType.label}">Doğal Gaz</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="text-muted">Kat</h6>
+                    <p class="mb-0" th:text="${property.floorNumber}">3</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="text-muted">Bina Katı</h6>
+                    <p class="mb-0" th:text="${property.buildingFloors}">7</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6 class="text-muted">Eşyalı</h6>
+                    <p class="mb-0" th:text="${property.furnished ? 'Evet' : 'Hayır'}">Hayır</p>
+                </div>
+
+                <div class="col-12">
+                    <h6 class="text-muted">Açıklama</h6>
+                    <p class="mb-0" th:text="${property.description}">Emlak Açıklaması</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

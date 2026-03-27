@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}">
+            <img src="/images/logo.png" alt="EstateFlow" style="height:40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Panel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/agency/view}">Ofis Bilgileri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/customers/view}">Müşteriler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/properties/view}">Emlaklar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/search/view}">Emlak Arama</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

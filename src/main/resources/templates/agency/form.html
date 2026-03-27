@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ofis Düzenle</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="container py-4">
+    <h2 class="fw-bold mb-4">Ofis Bilgilerini Düzenle</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <form th:action="@{/agency/view/edit}" th:object="${agencyForm}" method="post">
+
+                <div class="mb-3">
+                    <label class="form-label">İşletme Adı</label>
+                    <input type="text" class="form-control" th:field="*{businessName}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Yetkili Kişi</label>
+                    <input type="text" class="form-control" th:field="*{authorizedPerson}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Telefon</label>
+                    <input type="text" class="form-control" th:field="*{phone}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Fax</label>
+                    <input type="text" class="form-control" th:field="*{fax}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Adres</label>
+                    <textarea class="form-control" th:field="*{address}"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Kaydet</button>
+                <a href="/agency/view" class="btn btn-secondary">İptal</a>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

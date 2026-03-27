@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    border-radius: 14px;
+}
+.navbar-brand img {
+    height: 40px;
+    object-fit: contain;
+}
+.custom-navbar {
+    background-color: #2f3a45;
+}
+h1, h2, h4 {
+    color: #1f2937;
+}
