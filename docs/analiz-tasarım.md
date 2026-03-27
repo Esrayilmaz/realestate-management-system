@@ -75,7 +75,7 @@ Müşteri tipleri:
 
 ---
 
-## 🏗️ Mimari Tasarım
+## Mimari Tasarım
 
 
 * **Controller Katmanı**
@@ -104,7 +104,7 @@ Müşteri tipleri:
 
 ---
 
-## 🗄 Veritabanı Tasarımı
+## Veritabanı Tasarımı
 
 ### Tablolar
 
@@ -115,7 +115,7 @@ Müşteri tipleri:
 
 ---
 
-## 🔗 İlişkiler
+## İlişkiler
 
 ### Customer → Property
 

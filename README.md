@@ -41,7 +41,7 @@ Exception → Hata yönetimi
 - Agency
 - Property Search
 - Property Print
-- 
+
 ## Senaryo Akışı
 
 1. Emlak işletmesi kaydedilir
